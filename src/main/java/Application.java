@@ -9,7 +9,13 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableMongoRepositories({"repository"})
 public class Application {
     public static void main(String args[]) {
+        
+        Object[] sources = new Object[10];
+        
+        sources[0] = Directory_Hider.class;
+        sources[1] = Application.class;
+        
         System.setProperty("log.name", "image-service-logs");
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(sources, args);
     }
 }
